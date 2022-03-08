@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Webpage Title -->
+    <title>Detail | TwoHands</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+    <!-- Font Awesome CSS -->
+    <!--link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"-->
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <style>
+        .close {
+            float: right;
+            margin: 10px;
+        }
+
+        .container {
+            background-color: coral;
+            display: flex;
+            clear: both;
+
+            /*리뷰 작성이 많아지면 height는 어떻게 세팅해야 좋을지*/
+            height: 500px;
+            /*마진은 20px로 했는데 창크기가 어느 범위를 넘어가면 먹히질 않음*/
+            margin: 20px;
+        }
+
+        .detail {
+            background-color: blueviolet;
+            width: 40%;
+
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .image {
+            background-color: yellow;
+        }
+
+        .review {
+            background-color: aqua;
+            width: 60%;
+
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .reviewinput {
+            margin-top: 10px;
+            display: flex;
+        }
+    </style>
+
+    <script>
+
+    </script>
+
+</head>
+<body>
+    <div class="close">
+        <button class="button is-dark">닫기</button>
+    </div>
+
+    <div class="container">
+        <div class="detail">
+            <div class="image">
+                이미지
+            </div>
+            <div class="desc">
+                <p>-상품명: 의자</p>
+                <p>-가격: 1만원</p>
+                <p>-별점: 별*</p>
+                <p>-구매처 링크: 링크주소</p>
+            </div>
+        </div>
+
+        <div class="review">
+            <div>
+                <h1>리뷰(00)</h1>
+            </div>
+            <div>
+                <li>리뷰 1</li>
+                <li>리뷰 2</li>
+            </div>
+            <div class="reviewinput">
+               <input class="input is-normal" type="text" placeholder="예) 가성비 최고에요!">
+                <button class="button is-dark">등록</button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
