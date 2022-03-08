@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+    <style>
+        *{
+            font-size: 18px;
+        }
+        /*전체 요소 가운데 정렬*/
+        .wrap {
+            width: 500px;
+            /*background-color: red;*/
+            margin: 110px auto 0 auto;
+        }
+
+        /*로고 이미지 설정*/
+        .logoImage {
+            width: 180px;
+            height: 180px;
+            border-radius: 20px;
+
+            /*이미지 속성 가운데 정렬*/
+            display: block;
+            margin: auto;
+
+        }
+
+        .descFontStyle {
+            /*background-color: antiquewhite;*/
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .inputContainer {
+            /*background-color: green;*/
+            text-align: center;
+            margin: 48px 0 30px 0;
+        }
+
+        .inputStyle {
+            width: 300px;
+
+            /*input 박스 테두리 제거*/
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 1px solid black;
+
+            margin-bottom: 10px;
+        }
+
+        .btnStyle{
+            /*버튼 커서 스타일 지정*/
+            cursor: pointer;
+
+            width: 350px;
+            height: 56px;
+
+            border: 0;
+            border-radius: 50px;
+            background-color: gray;
+
+            color: white;
+            font-size: 18px;
+
+            /*버튼 속성 가운데 정렬*/
+            display: block;
+            margin: 16px auto 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img src="/static/flying dog.jpeg" class="logoImage">
+        <p class="descFontStyle">집들이 선물 큐레이션 & 커뮤니티</p>
+        <div class="inputContainer">
+            <p>ID: <input class="inputStyle" type="text" placeholder="아이디를 입력해주세요."/></p>
+            <p>PW: <input class="inputStyle" type="text" placeholder="비밀번호를 입력해주세요"/></p>
+        </div>
+        <div>
+            <button class="btnStyle"> 로그인 </button>
+        </div>
+        <div>
+            <button class="btnStyle" onclick='window.location.href = "/register"'> 회원가입 </button>
+        </div>
+    </div>
+
+
+</body>
+</html>
