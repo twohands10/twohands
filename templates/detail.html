@@ -49,7 +49,7 @@
             background-color: yellow;
         }
 
-        .review {
+        .reviewer {
             background-color: aqua;
             width: 60%;
 
@@ -64,45 +64,89 @@
     </style>
 
     <script>
+        // show_review가 시작하자마자 불리게 하기
+        $(document).ready(function () {
+            show_review();
+        });
 
+        function show_review() {
+            $.ajax({
+                type: "GET",
+                url: "/review",
+                data: {},
+                success: function (response) {
+                    let rows = response['reviews']
+                    for (let i= 0; i < rows.length; i++) {
+                        let review = rows[i]['review']
+
+                        let temp_html = `<h2>${review}</h2>`
+
+                        $('#review-list').append(temp_html)
+                    }
+                }
+            });
+        }
+
+        function save_review() {
+            let review = $('#review').val()
+            $.ajax({
+                type: "POST",
+                url: "/review",
+                data: {review_give: review},
+                success: function (response) {
+                    alert(response["msg"])
+                    // 이거는 알람이 뜬 뒤 새로고침 된다는 뜻
+                    window.location.reload()
+                }
+            });
+        }
+
+        function review_count(num) {
+            $.ajax({
+                type: "GET",
+                url: "/review",
+                data: {num_give: num},
+                success: function (response) {
+                    alert(response["msg"])
+                    window.location.reload()
+                }
+            });
+        }
     </script>
 
 </head>
 <body>
-    <div class="close">
-        <button class="button is-dark">닫기</button>
+<div class="close">
+    <button class="button is-dark">닫기</button>
+</div>
+
+<div class="container">
+    <div class="detail">
+        <div class="image">
+            이미지
+        </div>
+        <div class="desc">
+            <p>-상품명: 의자</p>
+            <p>-가격: 1만원</p>
+            <p>-별점: 별*</p>
+            <p>-구매처 링크: 링크주소</p>
+        </div>
     </div>
 
-    <div class="container">
-        <div class="detail">
-            <div class="image">
-                이미지
-            </div>
-            <div class="desc">
-                <p>-상품명: 의자</p>
-                <p>-가격: 1만원</p>
-                <p>-별점: 별*</p>
-                <p>-구매처 링크: 링크주소</p>
-            </div>
+    <div class="reviewer">
+        <div id="review_count">
+            <h1>리뷰(${num})</h1>
         </div>
-
-        <div class="review">
-            <div>
-                <h1>리뷰(00)</h1>
-            </div>
-            <div>
-                <li>리뷰 1</li>
-                <li>리뷰 2</li>
-            </div>
-            <div class="reviewinput">
-               <input class="input is-normal" type="text" placeholder="예) 가성비 최고에요!">
-                <button class="button is-dark">등록</button>
-            </div>
-
+        <div id="review-list">
 
         </div>
-
+        <div class="reviewinput">
+            <input id="review" class="input is-normal" type="text" placeholder="예) 가성비 최고에요!">
+            <button onclick="save_review()" class="button is-dark">등록</button>
+        </div>
     </div>
+
+</div>
 
 </body>
 </html>
