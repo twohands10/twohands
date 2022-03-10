@@ -1,0 +1,47 @@
+
+body {
+    /*background-color: RGBA(232, 52, 78, 0.2);*/
+    min-height: 100vh;
+    /*background-color: darkblue;*/
+}
+
+.section {
+    /*background-color:darkblue;*/
+    padding: 1rem 1.5rem;
+    max-width: 750px;
+    margin: 24px auto 0px auto;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 72px;
+}
+
+.subtitle {
+    font-size: 20px;
+    /*background-color: #e8344e;*/
+}
+
+.fontStyle {
+    color: black !important;
+}
+
+.button.fontStyle {
+    background-color: black;
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.button.fontStyle.is-outlined {
+    background-color: transparent;
+    border-color: black;
+    color: black !important;
+}
+
+.help {
+    color: gray;
+}
+
+.is-hidden {
+    display: none !important;
+}
